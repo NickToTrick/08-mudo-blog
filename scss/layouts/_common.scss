@@ -1,0 +1,801 @@
+#wrapper {
+	@include animate(filter);
+	position: relative;
+	overflow: hidden;
+}
+a {
+	@include animate(color);
+}
+.btn {
+	@include animate(background-color);
+	background-color: $red;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 5px;
+	border: none;
+	padding: 10px 19px;
+	text-transform: uppercase;
+	font-family: $BebasNeue;
+	font-size: 22px;
+	line-height: 26px;
+	letter-spacing: -0.1px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	@include media ('<widescreen') {
+		font-size: 20px;
+		line-height: 24px;
+		padding: 7px 14px;
+	}
+	@include media ('<tablet') {
+		padding: 5px 12px;
+	}
+	&:hover, &:active {
+		background-color: darken($red, 5%);
+	}
+}
+.social-networks {
+	@extend %listreset;
+	font-size: 20px;
+	line-height: 0;
+	li {
+		display: inline-block;
+		vertical-align: top;
+	}
+	a {
+		color: $purple-icon;
+		text-decoration: none;
+		&:hover {
+			color: $red;
+		}
+	}
+	.icon-facebook {
+		font-size: 21px;
+	}
+	.icon-twitter {
+		font-size: 17px;
+	}
+	.icon-pinterest {
+		font-size: 24px;
+	}
+	.icon-google-plus {
+		font-size: 19px;
+	}
+	.icon-linkedin {
+		font-size: 20px;
+	}
+	.icon-email {
+		font-size: 16px;
+	}
+}
+.heading {
+	margin: 0 auto 84px auto;
+	padding: 72px 30px 0 30px;
+	text-align: center;
+	color: $gray-text;
+	font-size: 24px;
+	@include media ('<desktop') {
+		margin: 0 auto 50px auto;
+		padding: 40px 0 0 0;
+		font-size: 22px;
+		line-height: 28px;
+	}
+	@include media ('<phone') {
+		font-size: 20px;
+		line-height: 26px;
+		margin: 0 auto 40px auto;
+	}
+	h1 {
+		margin: 0 0 15px 10px;
+		font-size: 90px;
+		line-height:100px;
+		font-weight: normal;
+		font-family: $AreteMono;
+		color: $red;
+		@include media ('<desktop') {
+			font-size: 60px;
+			line-height: 66px;
+			margin: 0 0 10px 0;
+		}
+		@include media ('<tablet') {
+			font-size: 44px;
+			line-height: 48px;
+			margin: 0 0 15px 0;
+		}
+		@include media ('<phone') {
+			font-size: 36px;
+			line-height: 40px;
+		}
+	}
+}
+.content-block {
+	padding: 0 45px;
+	@include media ('<desktop') {
+		padding: 0 30px;
+	}
+	@include media ('<desktop') {
+		padding: 0 15px;
+	}
+}
+.popup-container {
+	@extend %listreset;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -45px 75px 0;
+	@include media ('<desktop') {
+		margin: 0 -15px 50px 0;
+	}
+	li {
+		width: 25%;
+		padding: 0 45px 45px 0;
+		@include media ('<desktop') {
+			width: 50%;
+			padding: 0 15px 15px 0;
+		}
+		@include media ('<phone') {
+			width: 100%;
+		}
+	}
+	.holder {
+		position: relative;
+	}
+}
+.popup-holder {
+	display: none;
+}
+.lightbox-img {
+	font-family: $BebasNeue;
+	outline: none;
+	display: block;
+	text-decoration: none;
+	position: relative;
+	color: $purple-text-2;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	padding-top: 100%;
+	&:hover {
+		.hover-block {
+			opacity: 1;
+		}
+	}
+	> .text-block {
+		max-width: 80%;
+		overflow: hidden;
+		display: inline-flex;
+		flex-direction: column;
+		align-items: flex-start;
+		vertical-align: top;
+		position: absolute;
+		font-size: 44px;
+		line-height: 48px;
+		@media screen and (max-device-width: 1800px) {
+			font-size: 32px;
+			line-height: 36px;
+		}
+		@include media ('<widescreen') {
+			font-size: 24px;
+			line-height: 28px;
+		}
+		@include media ('<desktop') {
+			font-size: 36px;
+			line-height: 40px;
+		}
+		@include media ('<tablet') {
+			font-size: 26px;
+			line-height: 28px;
+		}
+		@include media ('<phone') {
+			font-size: 30px;
+			line-height: 32px;
+		}
+		&.rotate-1 {
+			bottom: 6.4%;
+			right: 6.2%;
+			transform: rotate(-7deg);
+		}
+		&.rotate-2 {
+			top: 50%;
+			left: 50%;
+			transform: translate(-61%, -21%) rotate(11.5deg);
+			@media screen and (max-device-width: 1800px) {
+				max-width: 95%;
+				transform: translate(-50%, -21%) rotate(11.5deg);
+			}
+			@include media ('<widescreen') {
+				max-width: 90%;
+			}
+		}
+		&.rotate-3 {
+			bottom: 8%;
+			left: 6%;
+			transform: rotate(-2.4deg);
+			@media screen and (max-device-width: 1800px) {
+				max-width: 95%;
+				left: 3%;
+			}
+			@include media ('<widescreen') {
+				max-width: 95%;
+			}
+			@include media ('<desktop') {
+				left: 6%;
+			}
+			span:first-child {
+				margin-left: 18%;
+			}
+		}
+		&.rotate-4 {
+			bottom: 7%;
+			right: 9.7%;
+			transform: rotate(2.5deg);
+			@media screen and (max-device-width: 1800px) {
+				max-width: 85%;
+				right: 6%;
+			}
+			span:last-child {
+				margin-left: 32.5%;
+			}
+		}
+		&.rotate-5 {
+			bottom: 10%;
+			right: 9%;
+			transform: rotate(-4deg);
+		}
+		> span {
+			padding: 5px 10px 1px 10px;
+			margin-bottom: 6px;
+			display: inline-block;
+			vertical-align: top;
+			background-color: $white;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width: 100%;
+		}
+	}
+	.hover-block {
+		@include animate(opacity);
+		opacity:0;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(247, 237, 225, .75);
+		font-size: 40px;
+		line-height: 40px;
+		letter-spacing: 3.2px;
+		text-transform: uppercase;
+		text-align: center;
+		@media screen and (max-device-width: 1800px) {
+			font-size: 36px;
+			line-height: 38px;
+		}
+		@include media ('<widescreen') {
+			font-size: 24px;
+			line-height: 28px;
+		}
+		@include media ('<desktop') {
+			font-size: 36px;
+			line-height: 40px;
+		}
+		@include media ('<tablet') {
+			font-size: 24px;
+			line-height: 28px;
+		}
+		@include media ('<phone') {
+			font-size: 28px;
+			line-height: 32px;
+		}
+		.text-block {
+			width: 70%;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			@media screen and (max-device-width: 1800px) {
+				width: 80%;
+			}
+		}
+		.title {
+			font-size: 32px;
+			letter-spacing: 2.5px;
+			display: block;
+			margin-bottom: 38px;
+			position: relative;
+			@media screen and (max-device-width: 1800px) {
+				margin-bottom: 32px;
+			}
+			@include media ('<widescreen') {
+				margin-bottom: 26px;
+				font-size: 30px;
+			}
+			@include media ('<desktop') {
+				margin-bottom: 32px;
+			}
+			&:after {
+				content: '';
+				width: 36px;
+				height: 3px;
+				background-color: $purple-text-2;
+				position: absolute;
+				bottom: -18px;
+				left: 50%;
+				transform: translate(-50%, 0);
+				@media screen and (max-device-width: 1800px) {
+					bottom: -15px;
+				}
+				@include media ('<widescreen') {
+					bottom: -13px;
+				}
+				@include media ('<desktop') {
+					bottom: -15px;
+				}
+				@include media ('<tablet') {
+					bottom: -16px;
+				}
+			}
+		}
+	}
+	i {
+		font-size: 66px;
+		color: rgba(255, 255, 255, .9);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		@include media ('<widescreen') {
+			font-size: 55px;
+		}
+	}
+}
+.popup-block {
+	padding: 80px 80px 65px 80px;
+	max-width: 992px;
+	box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.25);
+	@include media ('<desktop') {
+		padding: 60px;
+	}
+	@include media ('<tablet') {
+		padding: 45px 15px 20px 15px;
+	}
+	.img-block {
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+		}
+	}
+	.row {
+		font-size: 22px;
+		line-height: 32px;
+		font-family: $BebasNeue;
+		display: flex;
+		justify-content: space-between;
+		line-height: 28px;
+		@include media ('<phone') {
+			flex-direction: column;
+		}
+	}
+	.holder {
+		max-width: 70%;
+		font-size: 22px;
+		font-family: $BebasNeue;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		@include media ('<tablet') {
+			max-width: 80%;
+		}
+		@include media ('<phone') {
+			flex-direction: column;
+			max-width: 100%;
+		}
+		&.bottom {
+			flex-direction: column;
+			align-items: center;
+			max-width: 100%;
+			span {
+				margin: 0 0 16px 0;
+			}
+		}
+		span {
+			margin-right: 19px;
+			@include media ('<phone') {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.social-networks {
+		margin-right: -20px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		@include media ('<tablet') {
+			margin-right: -15px;
+		}
+		li {
+			margin: 0 20px 10px 0;
+			@include media ('<tablet') {
+				margin: 0 15px 10px 0;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		color: $gray;
+		&:hover {
+			color: $red;
+		}
+	}
+	.time {
+		letter-spacing: -0.5px;
+		@include media ('<tablet') {
+			font-size: 18px;
+		}
+		@include media ('<phone') {
+			max-width: 100%;
+			margin-bottom: 10px;
+		}
+	}
+	span {
+		color: $purple-text-2;
+		letter-spacing: 1.7px;
+		line-height: 28px;
+		@include media ('<tablet') {
+			font-size: 18px;
+		}
+		@include media ('<phone') {
+			font-size: 16px;
+		}
+	}
+}
+.loader-block {
+	width: 72px;
+	height: 72px;
+	margin: 0 auto 119px auto;
+	border-radius: 50%;
+	border: solid 13px $gray-loader;
+	border-top-color: $purple-text-3;
+	animation: spin 1.5s infinite linear;
+	@keyframes spin {
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+	@include media ('<desktop') {
+		width: 50px;
+		height: 50px;
+		border: solid 10px $gray-loader;
+		border-top-color: $purple-text-3;
+		margin: 0 auto 65px auto;
+	}
+}
+.contact-form {
+	input[type="text"], input[type="email"], input[type="tel"] {
+		padding: 18px;
+		margin-bottom: 15px;
+		border: none;
+		background-color: $purple-form;
+		border-radius: 5px;
+		outline: none;
+		color: $light-purple;
+		width: 100%;
+		@include media ('<phone') {
+			padding: 10px;
+		}
+	}
+	.btn {
+		width: 100%;
+		margin: 10px 0 0 0;
+		padding: 11px 19px 9px 19px;
+		border-radius: 5px;
+		font-size: 26px;
+		line-height: 32px;
+		outline: none;
+		letter-spacing: 2.1px;
+		@include media ('<desktop') {
+			line-height: 28px;
+			font-size: 24px;
+		}
+		@include media ('<tablet') {
+			white-space: normal;
+		}
+		@include media ('<phone') {
+			font-size: 20px;
+			line-height: 24px;
+			padding: 8px 12px 6px 12px;
+		}
+	}
+	form {
+		max-width: 395px;
+		margin: 0 auto;
+	}
+	span {
+		color: $light-purple;
+	}
+	select {
+		padding: 10px;
+	}
+}
+.fancybox-enabled, .active-modal {
+	#wrapper {
+		filter: blur(3px);
+		background-color: rgba(0, 0, 0, .2);
+	}
+}
+#modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding:15px;
+	overflow: auto;
+	.active-modal & {
+		display: block;
+	}
+	.modal-wrap {
+		width: 100%;
+		height: 100%;
+		display: table;
+		table-layout: fixed;
+	}
+	.modal-wrap-holder{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.modal-holder {
+		margin: 0 auto;
+		box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.25);
+		position: relative;
+		max-width: 585px;
+		background-color: #fff;
+		padding: 77px 80px 80px 80px;
+		@include media ('<desktop') {
+			padding: 57px 60px 60px 60px;
+		}
+		@include media ('<tablet') {
+			max-width: 455px;
+			padding: 30px 30px 30px 30px;
+		}
+		@include media ('<phone') {
+			padding: 30px 15px 30px 15px;;
+		}
+	}
+	.title {
+		text-align: center;
+		h1 {
+			font-size: 32px;
+			line-height: 36px;
+			letter-spacing: 2.3px;
+			font-weight: normal;
+			color: $red;
+			@include media ('<tablet') {
+				font-size: 30px;
+				line-height: 34px;
+			}
+			@include media ('<phone') {
+				font-size: 28px;
+				line-height: 32px;
+			}
+		}
+	}
+	p {
+		margin: 0;
+	}
+}
+#popup-offer {
+	max-width: 810px;
+	padding: 80px;
+	@include media ('<desktop') {
+		padding: 60px;
+	}
+	@include media ('<tablet') {
+		padding: 45px 15px 30px 15px;
+	}
+	.title {
+		text-align: center;
+		h1 {
+			font-size: 40px;
+			line-height: 46px;
+			letter-spacing: 3px;
+			color: $red;
+			margin-bottom: 24px;
+			@include media ('<desktop') {
+				font-size: 36px;
+				line-height: 40px;
+			}
+			@include media ('<phone') {
+				font-size: 30px;
+				line-height: 34px;
+			}
+		}
+	}
+	.img-block {
+		margin-bottom: 43px;
+	}
+	.btn {
+		position: relative;
+		width: auto;
+		display: block;
+		padding: 12px 68px 10px 35px;
+		margin: 14px auto 0 auto;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 100%;
+		@include media ('<phone') {
+			padding: 8px 60px 6px 27px;
+		}
+	}
+	.icon-arrow {
+		color: $white;
+		font-size: 9px;
+		position: absolute;
+		top: 50%;
+		right: 35px;
+		transform: translate(0, -50%);
+		@include media ('<phone') {
+			right: 27px;
+		}
+	}
+	p {
+		margin: 0;
+	}
+	span {
+		letter-spacing: 0;
+	}
+}
+#popup-video, #popup-img {
+	color: $gray;
+	text-transform: uppercase;
+}
+#popup-article {
+	max-width: 992px;
+	time {
+		color: $gray;
+	}
+	article {
+		h1 {
+			font-weight: normal;
+		}
+		margin-bottom: 66px;
+		@include media ('<desktop') {
+			margin-bottom: 40px;
+		}
+		@include media ('<tablet') {
+			line-height: 22px;
+			margin-bottom: 30px;
+		}
+		p {
+			margin-bottom: 30px;
+			@include media ('<desktop') {
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.wp-caption {
+		padding: 0;
+		margin: 0;
+		border: none;
+		margin-bottom: 32px;
+	}
+	.wp-caption-text {
+		background-color: $gray-figcaption;
+		padding: 12px 21px 18px 21px;
+		@include media ('<tablet') {
+			padding: 12px 15px 18px 15px;
+		}
+	}
+	.title {
+		max-width: 420px;
+		line-height: 1;
+		margin-bottom: 42px;
+		@include media ('<desktop') {
+			margin-bottom: 0;
+		}
+		h1 {
+			@include media ('<desktop') {
+			font-size: 36px;
+			line-height: 40px;
+			}
+		}
+	}
+	.row {
+		margin-bottom: 52px;
+		@include media ('<tablet') {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+// Browser-styles
+.msie {
+	.btn.lightbox {
+		padding: 13px 19px 7px 19px;
+	}
+	#popup-offer .btn {
+		padding: 13px 68px 7px 35px;
+	}
+	.contact-form .btn {
+		padding: 13px 19px 7px 19px;
+	}
+	.page-link {
+		i {
+			transform: translate(0px, -85%);
+		}
+	}
+	.lightbox-img > .text-block > span {
+		line-height: 40px;
+		padding: 12px 10px 1px 10px;
+	}
+	.lightbox-img .hover-block .title::after {
+		bottom: -13px;
+	}
+}
+.mac {
+	.btn.lightbox {
+		padding: 11px 19px 9px 19px;
+	}
+	#popup-offer .btn {
+		padding: 11px 68px 9px 35px;
+	}
+	.contact-form .btn {
+		padding: 11px 19px 9px 19px;
+	}
+	.page-link {
+		i {
+			transform: translate(0px, -64%);
+		}
+	}
+}
+
+// Wp test
+.main-holder {
+	padding: 50px 0;
+	@include media("<desktop") {
+		padding: 30px 0;
+	}
+	.center-block {
+		@extend %clearfix;
+	}
+}
+#content {
+	float: left;
+	width: 100%;
+	@include media("<tablet") {
+		float: none;
+		margin: 0 0 20px;
+	}
+	>.holder {
+		margin: 0 300px 0 0;
+		@include media("<desktop") {
+			margin: 0 260px 0 0;
+		}
+		@include media("<tablet") {
+			margin: 0;
+		}
+	}
+}
+#sidebar {
+	float: right;
+	width: 260px;
+	margin: 0 0 0 -100%;
+	@include media("<desktop") {
+		width: 240px;
+	}
+	@include media("<tablet") {
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+}
+.center-block {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
